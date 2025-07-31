@@ -1,0 +1,132 @@
+/* Alap háttér és betűk */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f9f9f9;
+}
+
+/* Oldalsó menü */
+#sidebar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+}
+
+#logoLabel {
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+#sidebar .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-pref-width: 160;
+}
+
+#sidebar .button:hover {
+    -fx-background-color: #34495e;
+}
+
+/* Felső cím */
+#pageTitle {
+    -fx-font-size: 24px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Statisztikai panel */
+#statBox {
+    -fx-background-color: #2ecc71;
+    -fx-padding: 15;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+#inStockLabel {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* AI Segéd doboz */
+#chatBox {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+#chatOutput {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+#chatInput {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+#chatSendButton {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+#chatSendButton:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Keresősáv */
+#searchField {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-padding: 6;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Táblázat */
+#productTable {
+    -fx-background-color: white;
+}
+
+.table-view {
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+    -fx-table-cell-border-color: #eaeaea;
+}
+
+.table-view .column-header {
+    -fx-background-color: #3498db;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-padding: 5;
+    -fx-font-size: 13px;
+}
+
+/* Scrollbar */
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: #ecf0f1;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 5;
+}

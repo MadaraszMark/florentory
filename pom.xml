@@ -55,6 +55,28 @@
 			<artifactId>floraland-backend</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>fraudscan</groupId>
+			<artifactId>fraudscan-backend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- JavaFX Controls -->
+<dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-controls</artifactId>
+    <version>21.0.1</version>
+    <classifier>win</classifier> <!-- vagy linux / mac -->
+</dependency>
+
+<!-- JavaFX FXML -->
+<dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-fxml</artifactId>
+    <version>21.0.1</version>
+    <classifier>win</classifier> <!-- vagy linux / mac -->
+</dependency>
+
+		
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

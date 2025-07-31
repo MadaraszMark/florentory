@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="hu.florentory.main.fx.controller.MainViewController"
+            stylesheets="@/MainViewCss.css">
+
+    <!-- OLDALSÓ MENÜ -->
+    <left>
+    <VBox fx:id="sidebar" spacing="10" BorderPane.alignment="CENTER" prefWidth="240">
+        <children>
+            <Label fx:id="logoLabel" text="Florentory" />
+            <Button fx:id="dashboardButton" text="Kezdőlap" />
+            <Button fx:id="productButton" text="Termékek" />
+            <Button fx:id="ordersButton" text="Rendelések" />
+        </children>
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+    </VBox>
+</left>
+
+    <!-- FELSŐ CÍM -->
+    <top>
+        <Label fx:id="pageTitle" text="Termékek" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- KÖZÉP -->
+    <center>
+        <VBox spacing="15">
+            <children>
+
+                <!-- Statisztika + Chat -->
+                <HBox spacing="10">
+                    <children>
+
+                        <!-- Statisztika panel -->
+                        <VBox fx:id="statBox" spacing="10">
+                            <children>
+                                <Label fx:id="inStockLabel" text="12 készleten" />
+                            </children>
+                        </VBox>
+
+                        <!-- Chat panel -->
+                        <VBox fx:id="chatBox" spacing="5" VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label text="AI Segéd" />
+                                <TextArea fx:id="chatOutput" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+                                <TextField fx:id="chatInput" promptText="Írj ide kérdést..." />
+                                <Button fx:id="chatSendButton" text="Küldés" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                
+            <TextField fx:id="globalSearchField" promptText="Keresés név vagy kulcsszó alapján..." maxWidth="Infinity" />
+
+                <!-- Termék táblázat -->
+                <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" text="ID" />
+                        <TableColumn fx:id="colName" text="Név" />
+                        <TableColumn fx:id="colQuantity" text="Mennyiség" />
+                        <TableColumn fx:id="colPrice" text="Ár / egység" />
+                        <TableColumn fx:id="colCategory" text="Kategória" />
+                        <TableColumn fx:id="colAction" text="Művelet" />
+                    </columns>
+                </TableView>
+
+            </children>
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </VBox>
+    </center>
+
+</BorderPane>
+
+
+
+
