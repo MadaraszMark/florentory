@@ -1,85 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.171"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="hu.florentory.main.fx.controller.MainViewController"
-            stylesheets="@/MainViewCss.css">
+<BorderPane stylesheets="@/MainViewCss.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.florentory.main.fx.controller.MainViewController">
 
-    <!-- OLDALSÓ MENÜ -->
-    <left>
-    <VBox fx:id="sidebar" spacing="10" BorderPane.alignment="CENTER" prefWidth="240">
-        <children>
-            <Label fx:id="logoLabel" text="Florentory" />
-            <Button fx:id="dashboardButton" text="Kezdőlap" />
-            <Button fx:id="productButton" text="Termékek" />
-            <Button fx:id="ordersButton" text="Rendelések" />
-        </children>
-        <padding>
-            <Insets top="10" right="10" bottom="10" left="10"/>
-        </padding>
-    </VBox>
-</left>
-
-    <!-- FELSŐ CÍM -->
-    <top>
-        <Label fx:id="pageTitle" text="Termékek" BorderPane.alignment="CENTER"/>
-    </top>
-
-    <!-- KÖZÉP -->
+    <!-- KÖZÉP: menüsáv + tartalom + cím együtt -->
     <center>
-        <VBox spacing="15">
-            <children>
+        <HBox spacing="0">
+            <!-- OLDALSÓ MENÜ, teljes magasságban -->
+            <VBox fx:id="sidebar" prefWidth="240" spacing="10" style="-fx-background-color: #2c3e50;">
+                <children>
+                    <Label fx:id="logoLabel" style="-fx-text-fill: white;" text="Florentory" />
+                    <Button fx:id="dashboardButton" text="Kezdőlap" />
+                    <Button fx:id="productButton" text="Termékek" />
+                    <Button fx:id="ordersButton" text="Rendelések" />
+                </children>
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+            <HBox.margin>
+               <Insets bottom="20.0" />
+            </HBox.margin>
+            </VBox>
 
-                <!-- Statisztika + Chat -->
-                <HBox spacing="10">
-                    <children>
+            <!-- JOBB OLDALI TARTALOM -->
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <children>
+                    <!-- CÍM A TARTALOM FELETT -->
+                    <Label fx:id="pageTitle" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Termékek" />
 
-                        <!-- Statisztika panel -->
-                        <VBox fx:id="statBox" spacing="10">
-                            <children>
-                                <Label fx:id="inStockLabel" text="12 készleten" />
-                            </children>
-                        </VBox>
+                    <!-- TARTALOM -->
+                    <VBox spacing="15" VBox.vgrow="ALWAYS">
+                        <children>
+                            <HBox spacing="10">
+                                <children>
+                                    <VBox fx:id="statBox" spacing="10">
+                                        <children>
+                                            <Label fx:id="inStockLabel" text="12 készleten" />
+                                        </children>
+                                    </VBox>
+                                    <VBox fx:id="chatBox" spacing="5" VBox.vgrow="ALWAYS">
+                                        <children>
+                                            <Label text="AI Segéd" />
+                                            <TextArea fx:id="chatOutput" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+                                            <TextField fx:id="chatInput" promptText="Írj ide kérdést..." />
+                                            <Button fx:id="chatSendButton" text="Küldés" />
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </HBox>
 
-                        <!-- Chat panel -->
-                        <VBox fx:id="chatBox" spacing="5" VBox.vgrow="ALWAYS">
-                            <children>
-                                <Label text="AI Segéd" />
-                                <TextArea fx:id="chatOutput" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
-                                <TextField fx:id="chatInput" promptText="Írj ide kérdést..." />
-                                <Button fx:id="chatSendButton" text="Küldés" />
-                            </children>
-                        </VBox>
-                    </children>
-                </HBox>
-                
-            <TextField fx:id="globalSearchField" promptText="Keresés név vagy kulcsszó alapján..." maxWidth="Infinity" />
+                            <TextField fx:id="globalSearchField" maxWidth="Infinity" promptText="Keresés név vagy kulcsszó alapján..." />
 
-                <!-- Termék táblázat -->
-                <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
-                    <columns>
-                        <TableColumn fx:id="colId" text="ID" />
-                        <TableColumn fx:id="colName" text="Név" />
-                        <TableColumn fx:id="colQuantity" text="Mennyiség" />
-                        <TableColumn fx:id="colPrice" text="Ár / egység" />
-                        <TableColumn fx:id="colCategory" text="Kategória" />
-                        <TableColumn fx:id="colAction" text="Művelet" />
-                    </columns>
-                </TableView>
-
-            </children>
-            <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
-            </padding>
-        </VBox>
+                            <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="colId" prefWidth="100" text="ID" />
+                                    <TableColumn fx:id="colName" prefWidth="200" text="Név" />
+                                    <TableColumn fx:id="colQuantity" prefWidth="150" text="Mennyiség" />
+                                    <TableColumn fx:id="colPrice" prefWidth="150" text="Ár / egység" />
+                                    <TableColumn fx:id="colCategory" prefWidth="150" text="Kategória" />
+                                    <TableColumn fx:id="colAction" prefWidth="150" text="Művelet" />
+                                </columns>
+                            </TableView>
+                        </children>
+                        <padding>
+                            <Insets bottom="10" left="10" right="10" top="10" />
+                        </padding>
+                    </VBox>
+                </children>
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+            </VBox>
+        </HBox>
     </center>
 
 </BorderPane>
-
-
-
-
