@@ -1,5 +1,6 @@
 package hu.florentory.main.model;
 
+
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;

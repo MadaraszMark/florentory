@@ -6,57 +6,75 @@ import jakarta.validation.constraints.NotNull;
 
 public class ProductRequest {
 	
-	@NotBlank(message = "Az SKU megadása kötelező!")
+    @NotBlank(message = "Az SKU megadása kötelező!")
     private String sku;
-	@NotBlank(message = "Név az kötelező!")
-	private String name;
-	@NotNull(message = "A kategória ID megadása kötelező!")
-	@Min(value = 1, message = "A kategória ID legalább 1 kell legyen!")
-	private Long categoryId;
-	private String description;
-	@Min(value = 0, message = "Az árnak pozitívnak kell lennie!")
-	private double price;
-	
-	public ProductRequest() {
-	}
 
-	public String getSku() {
-		return sku;
-	}
+    @NotBlank(message = "Név az kötelező!")
+    private String name;
 
-	public void setSku(String sku) {
-		this.sku = sku;
-	}
+    @NotNull(message = "A kategória ID megadása kötelező!")
+    @Min(value = 1, message = "A kategória ID legalább 1 kell legyen!")
+    private Long categoryId;
 
-	public String getName() {
-		return name;
-	}
+    private String description;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    @Min(value = 0, message = "Az árnak pozitívnak kell lennie!")
+    private double price;
 
-	public Long getCategoryId() {
-		return categoryId;
-	}
+    @Min(value = 0, message = "A mennyiség nem lehet negatív!")
+    private int quantity;
 
-	public void setCategoryId(Long categoryId) {
-		this.categoryId = categoryId;
-	}
+    public ProductRequest() {
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    // --- GETTERS / SETTERS ---
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getSku() {
+        return sku;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
+

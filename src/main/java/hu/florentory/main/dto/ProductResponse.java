@@ -3,80 +3,98 @@ package hu.florentory.main.dto;
 import java.time.LocalDateTime;
 
 public class ProductResponse {
-	
-	private Long id;
-	private Long categoryId;
+
+    private Long id;
+    private Long categoryId;
+    private String categoryName;
     private String sku;
     private String name;
     private String description;
     private double price;
+    private int quantity;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    
-    public ProductResponse() {
+
+    public ProductResponse() {}
+
+    public Long getId() {
+        return id;
     }
 
-	public Long getId() {
-		return id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getCategoryId() {
+        return categoryId;
+    }
 
-	public Long getCategoryId() {
-		return categoryId;
-	}
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
 
-	public void setCategoryId(Long categoryId) {
-		this.categoryId = categoryId;
-	}
+    public String getCategoryName() {
+        return categoryName;
+    }
 
-	public String getSku() {
-		return sku;
-	}
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
 
-	public void setSku(String sku) {
-		this.sku = sku;
-	}
+    public String getSku() {
+        return sku;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public double getPrice() {
+        return price;
+    }
 
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
+    public int getQuantity() {
+        return quantity;
+    }
 
-	public LocalDateTime getUpdatedAt() {
-		return updatedAt;
-	}
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-	public void setUpdatedAt(LocalDateTime updatedAt) {
-		this.updatedAt = updatedAt;
-	}
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
+

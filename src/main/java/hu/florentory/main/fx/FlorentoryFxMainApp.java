@@ -8,6 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import hu.florentory.main.FlorentoryApplication;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -26,7 +27,11 @@ public class FlorentoryFxMainApp extends Application {
     public void start(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/hu/florentory/main/fx/view/MainViewFxml.fxml"));
-            Scene scene = new Scene(loader.load());
+
+            loader.setControllerFactory(context::getBean);
+
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
 
             primaryStage.setTitle("Florentory - Inventory Manager");
             primaryStage.setScene(scene);
@@ -36,12 +41,17 @@ public class FlorentoryFxMainApp extends Application {
             System.err.println("Nem sikerült betölteni az FXML fájlt!");
             e.printStackTrace();
         }
+    }
 
+    @Override
+    public void stop() {
+        context.close();
     }
 
     public static void main(String[] args) {
         launch(args);
     }
 }
+
 
 

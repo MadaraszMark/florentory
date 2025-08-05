@@ -76,7 +76,12 @@
     <classifier>win</classifier> <!-- vagy linux / mac -->
 </dependency>
 
-		
+
+		<dependency>
+			<groupId>app</groupId>
+			<artifactId>jobapp_springboot</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
